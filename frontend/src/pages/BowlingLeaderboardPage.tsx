@@ -5,8 +5,8 @@ import {
   Search,
   ArrowUpDown,
   Download,
+  Filter,
   CheckCircle2,
-  TrendingDown,
   ChevronRight,
   Info,
 } from 'lucide-react';
@@ -24,10 +24,10 @@ type SortField =
   | 'econ_pressure'
   | 'delta_econ'
   | 'runs_prevented_per_6'
-  | 'pressure_wickets'
+  | 'pressure_overs'
   | 'dot_pct'
-  | 'wicket_sr'
-  | 'pressure_overs';
+  | 'boundary_pct'
+  | 'wicket_sr';
 
 export const BowlingLeaderboardPage: React.FC<BowlingLeaderboardPageProps> = ({
   data,
@@ -77,8 +77,7 @@ export const BowlingLeaderboardPage: React.FC<BowlingLeaderboardPageProps> = ({
       setSortAsc(!sortAsc);
     } else {
       setSortField(field);
-      // For economy, ascending is better, but rank default is asc
-      setSortAsc(field === 'rank' || field === 'econ_pressure');
+      setSortAsc(field === 'rank');
     }
   };
 
@@ -90,37 +89,37 @@ export const BowlingLeaderboardPage: React.FC<BowlingLeaderboardPageProps> = ({
       {/* Header bar */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-cyan-400 mb-1">
-            <Shield className="w-4 h-4" />
-            <span>Bowling Reliability Rankings</span>
+          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#650D73] dark:text-purple-300 mb-1">
+            <Shield className="w-4 h-4 text-[#650D73] dark:text-purple-300" />
+            <span>Bowling Reliability Intelligence</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          <h2 className="text-2xl sm:text-3xl font-black text-[#23142E] dark:text-white tracking-tight">
             Official Top 10 Bowlers Under Pressure
           </h2>
-          <p className="text-xs sm:text-sm text-slate-400 mt-1">
-            Quantifying run containment, dot-ball pressure, and context-adjusted runs prevented in High & Extreme tiers
+          <p className="text-xs sm:text-sm text-[#71677B] dark:text-[#C5B4CE] mt-1 font-medium">
+            Measuring economy suppression (&Delta;Econ), runs prevented per 6 balls, dot execution, and clutch wicket threat
           </p>
         </div>
 
         {/* View toggles & CSV download */}
         <div className="flex items-center gap-2 self-start md:self-auto">
-          <div className="flex rounded-xl bg-slate-900 border border-slate-800 p-1 text-xs">
+          <div className="flex rounded-2xl bg-white dark:bg-[#3A174A] border border-[#F1DCE9] dark:border-[#673A70] p-1 text-xs shadow-royals-sm">
             <button
               onClick={() => setViewMode('top10')}
-              className={`px-3 py-1.5 rounded-lg font-medium transition-all ${
+              className={`px-3.5 py-1.5 rounded-xl font-bold transition-all ${
                 viewMode === 'top10'
-                  ? 'bg-cyan-500 text-slate-950 font-bold shadow'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-[#E5008A] text-white shadow-royals-pink shadow-sm'
+                  : 'text-[#71677B] dark:text-[#C5B4CE] hover:text-[#23142E] dark:hover:text-white'
               }`}
             >
               Top 10 Official
             </button>
             <button
               onClick={() => setViewMode('all')}
-              className={`px-3 py-1.5 rounded-lg font-medium transition-all ${
+              className={`px-3.5 py-1.5 rounded-xl font-bold transition-all ${
                 viewMode === 'all'
-                  ? 'bg-cyan-500 text-slate-950 font-bold shadow'
-                  : 'text-slate-400 hover:text-white'
+                  ? 'bg-[#E5008A] text-white shadow-royals-pink shadow-sm'
+                  : 'text-[#71677B] dark:text-[#C5B4CE] hover:text-[#23142E] dark:hover:text-white'
               }`}
             >
               All Qualified ({all_bowlers ? all_bowlers.length : 156})
@@ -130,130 +129,121 @@ export const BowlingLeaderboardPage: React.FC<BowlingLeaderboardPageProps> = ({
           <a
             href={viewMode === 'top10' ? '/data/top10_bowlers.csv' : '/data/bowling_rankings.csv'}
             download
-            className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 text-xs font-medium transition-colors"
+            className="flex items-center gap-1.5 px-3.5 py-2 rounded-2xl bg-white dark:bg-[#3A174A] hover:bg-[#FFF1F8] dark:hover:bg-[#2C0F3C] border border-[#F1DCE9] dark:border-[#673A70] text-[#E5008A] dark:text-[#FF4FAF] text-xs font-bold transition-colors shadow-royals-sm"
             title="Download CSV"
           >
-            <Download className="w-3.5 h-3.5 text-cyan-400" />
+            <Download className="w-3.5 h-3.5 text-[#E5008A] dark:text-[#FF4FAF]" />
             <span className="hidden sm:inline">CSV</span>
           </a>
         </div>
       </div>
 
       {/* Search and Filters Bar */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 glass-panel p-4 rounded-xl">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-3 royals-card p-4 rounded-2xl">
         <div className="relative w-full sm:w-80">
-          <Search className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
+          <Search className="w-4 h-4 text-[#71677B] dark:text-[#C5B4CE] absolute left-3 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             placeholder="Search bowler or franchise..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-9 pr-4 py-2 bg-slate-900 border border-slate-800 rounded-lg text-xs text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500"
+            className="w-full pl-9 pr-4 py-2 bg-[#FFF1F8] dark:bg-[#2C0F3C] border border-[#F1DCE9] dark:border-[#673A70] rounded-xl text-xs text-[#23142E] dark:text-white placeholder-[#71677B] dark:placeholder-[#C5B4CE] focus:outline-none focus:ring-2 focus:ring-[#E5008A]"
           />
         </div>
 
-        <div className="flex items-center gap-2 text-xs text-slate-400 w-full sm:w-auto justify-between sm:justify-end">
+        <div className="flex items-center gap-2 text-xs text-[#71677B] dark:text-[#C5B4CE] w-full sm:w-auto justify-between sm:justify-end font-medium">
           <span>
-            Showing <strong className="text-white">{filteredAndSorted.length}</strong> bowlers
+            Showing <strong className="text-[#23142E] dark:text-white">{filteredAndSorted.length}</strong> bowlers
           </span>
-          <span className="text-slate-600">&bull;</span>
-          <span className="text-[11px] text-slate-500">Threshold: &ge;120 pressure balls</span>
+          <span>&bull;</span>
+          <span className="text-[11px]">Threshold: &ge;120 pressure balls &middot; 8+ matches</span>
         </div>
       </div>
 
-      {/* Leaderboard Table */}
-      <div className="glass-panel rounded-2xl overflow-hidden border border-slate-800">
+      {/* Leaderboard Table — Clean White Table */}
+      <div className="royals-card rounded-3xl overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-slate-900/90 text-slate-400 uppercase tracking-wider font-semibold border-b border-slate-800 text-[11px]">
+            <thead className="bg-[#FFF1F8] dark:bg-[#2C0F3C] text-[#650D73] dark:text-purple-300 uppercase tracking-wider font-bold border-b border-[#F1DCE9] dark:border-[#673A70] text-[11px]">
               <tr>
                 <th
                   onClick={() => handleSort('rank')}
-                  className="py-3.5 px-4 cursor-pointer hover:text-white"
+                  className="py-4 px-4 cursor-pointer hover:text-[#E5008A]"
                 >
                   <div className="flex items-center gap-1">
                     <span>Rank</span>
-                    <ArrowUpDown className="w-3 h-3 text-slate-500" />
+                    <ArrowUpDown className="w-3 h-3 text-[#71677B]" />
                   </div>
                 </th>
-                <th className="py-3.5 px-4">Player & Team</th>
+                <th className="py-4 px-4">Player &amp; Team</th>
                 <th
                   onClick={() => handleSort('reliability_score')}
-                  className="py-3.5 px-4 cursor-pointer hover:text-white"
+                  className="py-4 px-4 cursor-pointer hover:text-[#E5008A]"
                 >
                   <div className="flex items-center gap-1">
                     <span>Reliability Score</span>
-                    <ArrowUpDown className="w-3 h-3 text-slate-500" />
+                    <ArrowUpDown className="w-3 h-3 text-[#71677B]" />
                   </div>
                 </th>
-                <th className="py-3.5 px-4 hidden md:table-cell">95% Confidence Interval</th>
+                <th className="py-4 px-4 hidden md:table-cell">95% Confidence Interval</th>
                 <th
                   onClick={() => handleSort('econ_pressure')}
-                  className="py-3.5 px-3 cursor-pointer hover:text-white text-right"
+                  className="py-4 px-3 cursor-pointer hover:text-[#E5008A] text-right"
                 >
                   <div className="flex items-center justify-end gap-1">
                     <span>Pressure Econ</span>
-                    <ArrowUpDown className="w-3 h-3 text-slate-500" />
+                    <ArrowUpDown className="w-3 h-3 text-[#71677B]" />
                   </div>
                 </th>
                 <th
                   onClick={() => handleSort('delta_econ')}
-                  className="py-3.5 px-3 cursor-pointer hover:text-white text-right"
+                  className="py-4 px-3 cursor-pointer hover:text-[#E5008A] text-right"
                 >
                   <div className="flex items-center justify-end gap-1">
                     <span>Delta Econ</span>
-                    <ArrowUpDown className="w-3 h-3 text-slate-500" />
+                    <ArrowUpDown className="w-3 h-3 text-[#71677B]" />
                   </div>
                 </th>
                 <th
                   onClick={() => handleSort('runs_prevented_per_6')}
-                  className="py-3.5 px-3 cursor-pointer hover:text-white text-right hidden sm:table-cell"
+                  className="py-4 px-3 cursor-pointer hover:text-[#E5008A] text-right hidden sm:table-cell"
                 >
                   <div className="flex items-center justify-end gap-1">
-                    <span>RP / 6b</span>
-                    <ArrowUpDown className="w-3 h-3 text-slate-500" />
-                  </div>
-                </th>
-                <th
-                  onClick={() => handleSort('pressure_wickets')}
-                  className="py-3.5 px-3 cursor-pointer hover:text-white text-right"
-                >
-                  <div className="flex items-center justify-end gap-1">
-                    <span>Wickets</span>
-                    <ArrowUpDown className="w-3 h-3 text-slate-500" />
+                    <span>Runs Saved/6</span>
+                    <ArrowUpDown className="w-3 h-3 text-[#71677B]" />
                   </div>
                 </th>
                 <th
                   onClick={() => handleSort('dot_pct')}
-                  className="py-3.5 px-3 cursor-pointer hover:text-white text-right hidden lg:table-cell"
+                  className="py-4 px-3 cursor-pointer hover:text-[#E5008A] text-right hidden lg:table-cell"
                 >
                   <div className="flex items-center justify-end gap-1">
                     <span>Dot %</span>
-                    <ArrowUpDown className="w-3 h-3 text-slate-500" />
+                    <ArrowUpDown className="w-3 h-3 text-[#71677B]" />
                   </div>
                 </th>
                 <th
                   onClick={() => handleSort('wicket_sr')}
-                  className="py-3.5 px-3 cursor-pointer hover:text-white text-right hidden lg:table-cell"
+                  className="py-4 px-3 cursor-pointer hover:text-[#E5008A] text-right hidden lg:table-cell"
                 >
                   <div className="flex items-center justify-end gap-1">
                     <span>Wkt SR</span>
-                    <ArrowUpDown className="w-3 h-3 text-slate-500" />
+                    <ArrowUpDown className="w-3 h-3 text-[#71677B]" />
                   </div>
                 </th>
                 <th
                   onClick={() => handleSort('pressure_overs')}
-                  className="py-3.5 px-4 cursor-pointer hover:text-white text-right"
+                  className="py-4 px-4 cursor-pointer hover:text-[#E5008A] text-right"
                 >
                   <div className="flex items-center justify-end gap-1">
                     <span>Overs</span>
-                    <ArrowUpDown className="w-3 h-3 text-slate-500" />
+                    <ArrowUpDown className="w-3 h-3 text-[#71677B]" />
                   </div>
                 </th>
-                <th className="py-3.5 px-3 text-center">Action</th>
+                <th className="py-4 px-3 text-center">Action</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-800/80 font-mono-num">
+            <tbody className="divide-y divide-[#F1DCE9] dark:divide-[#673A70] font-mono-num">
               {filteredAndSorted.map((p) => {
                 const name = getPlayerName(p);
                 const id = getPlayerId(p);
@@ -265,19 +255,19 @@ export const BowlingLeaderboardPage: React.FC<BowlingLeaderboardPageProps> = ({
                     onClick={() => {
                       if (top10Match) onSelectPlayer(top10Match);
                     }}
-                    className="hover:bg-slate-800/50 cursor-pointer transition-colors group"
+                    className="hover:bg-[#FFF5FA] dark:hover:bg-[#431454] cursor-pointer transition-colors group"
                   >
-                    <td className="py-3.5 px-4 font-bold text-slate-200">
+                    <td className="py-3.5 px-4 font-bold text-[#23142E] dark:text-white">
                       <div className="flex items-center gap-2">
                         <span
-                          className={`w-6 h-6 rounded-lg flex items-center justify-center text-xs font-black ${
+                          className={`w-7 h-7 rounded-xl flex items-center justify-center text-xs font-black shadow-sm ${
                             p.rank === 1
-                              ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/40'
+                              ? 'bg-[#E5008A] text-white shadow-royals-pink'
                               : p.rank === 2
-                              ? 'bg-slate-300/20 text-slate-200 border border-slate-300/40'
+                              ? 'bg-[#650D73] text-white'
                               : p.rank === 3
-                              ? 'bg-amber-700/20 text-amber-500 border border-amber-700/40'
-                              : 'text-slate-400'
+                              ? 'bg-amber-500 text-white'
+                              : 'bg-[#FFF1F8] dark:bg-[#2C0F3C] text-[#650D73] dark:text-purple-300 border border-[#F1DCE9] dark:border-[#673A70]'
                           }`}
                         >
                           {p.rank}
@@ -285,16 +275,16 @@ export const BowlingLeaderboardPage: React.FC<BowlingLeaderboardPageProps> = ({
                       </div>
                     </td>
                     <td className="py-3.5 px-4 font-sans">
-                      <div className="font-bold text-white group-hover:text-cyan-400 transition-colors">
+                      <div className="font-bold text-[#23142E] dark:text-white group-hover:text-[#E5008A] dark:group-hover:text-[#FF4FAF] transition-colors">
                         {name}
                       </div>
-                      <div className="text-[11px] text-slate-400">{p.teams}</div>
+                      <div className="text-[11px] text-[#71677B] dark:text-[#C5B4CE] font-medium">{p.teams}</div>
                     </td>
                     <td className="py-3.5 px-4">
-                      <div className="font-extrabold text-sm text-cyan-400">
+                      <div className="font-black text-sm text-[#E5008A] dark:text-[#FF4FAF]">
                         {p.reliability_score.toFixed(1)}
                       </div>
-                      <div className="text-[10px] text-slate-500 md:hidden">
+                      <div className="text-[10px] text-[#71677B] dark:text-[#C5B4CE] md:hidden">
                         [{p.ci_lower.toFixed(1)}, {p.ci_upper.toFixed(1)}]
                       </div>
                     </td>
@@ -307,34 +297,31 @@ export const BowlingLeaderboardPage: React.FC<BowlingLeaderboardPageProps> = ({
                         compact
                       />
                     </td>
-                    <td className="py-3.5 px-3 text-right font-bold text-white">
+                    <td className="py-3.5 px-3 text-right font-bold text-[#23142E] dark:text-white">
                       {p.econ_pressure.toFixed(2)}
                     </td>
                     <td className="py-3.5 px-3 text-right">
                       <span
-                        className={`font-semibold ${
-                          p.delta_econ <= 0 ? 'text-emerald-400' : 'text-rose-400'
+                        className={`font-bold ${
+                          p.delta_econ <= 0 ? 'text-emerald-600 dark:text-emerald-400' : 'text-[#71677B] dark:text-[#C5B4CE]'
                         }`}
                       >
-                        {p.delta_econ.toFixed(2)}
+                        {p.delta_econ <= 0 ? `${p.delta_econ.toFixed(2)}` : `+${p.delta_econ.toFixed(2)}`}
                       </span>
                     </td>
                     <td className="py-3.5 px-3 text-right hidden sm:table-cell">
-                      <span className="text-cyan-400 font-semibold">
+                      <span className="text-[#650D73] dark:text-purple-300 font-bold">
                         +{p.runs_prevented_per_6.toFixed(2)}
                       </span>
                     </td>
-                    <td className="py-3.5 px-3 text-right font-bold text-slate-200">
-                      {p.pressure_wickets}
-                    </td>
-                    <td className="py-3.5 px-3 text-right hidden lg:table-cell text-slate-300">
+                    <td className="py-3.5 px-3 text-right hidden lg:table-cell text-sky-600 dark:text-sky-400 font-medium">
                       {p.dot_pct.toFixed(1)}%
                     </td>
-                    <td className="py-3.5 px-3 text-right hidden lg:table-cell text-slate-400">
-                      {p.wicket_sr.toFixed(1)}
+                    <td className="py-3.5 px-3 text-right hidden lg:table-cell text-[#23142E] dark:text-white font-medium">
+                      {p.wicket_sr ? p.wicket_sr.toFixed(1) : '-'}
                     </td>
-                    <td className="py-3.5 px-4 text-right text-slate-300 font-medium">
-                      {(p as any).pressure_overs ?? ((p as any).pressure_balls / 6.0).toFixed(1)}
+                    <td className="py-3.5 px-4 text-right text-[#23142E] dark:text-white font-medium">
+                      {(p as any).pressure_overs ?? ((p as any).pressure_balls / 6.0).toFixed(1)} ov
                     </td>
                     <td className="py-3.5 px-3 text-center">
                       <button
@@ -342,7 +329,7 @@ export const BowlingLeaderboardPage: React.FC<BowlingLeaderboardPageProps> = ({
                           e.stopPropagation();
                           if (top10Match) onSelectPlayer(top10Match);
                         }}
-                        className="p-1 rounded hover:bg-slate-700 text-slate-400 group-hover:text-cyan-400 transition-colors"
+                        className="p-1.5 rounded-lg hover:bg-[#FFF1F8] dark:hover:bg-[#2C0F3C] text-[#71677B] group-hover:text-[#E5008A] transition-colors"
                         title="View Profile"
                       >
                         <ChevronRight className="w-4 h-4" />
@@ -357,13 +344,13 @@ export const BowlingLeaderboardPage: React.FC<BowlingLeaderboardPageProps> = ({
       </div>
 
       {/* Explanatory Callout */}
-      <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 text-xs text-slate-400 flex items-start gap-3">
-        <Info className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
-        <div>
-          <strong className="text-slate-200">How to interpret Bowling Reliability</strong>:{' '}
-          Bowling reliability rewards economy suppression under pressure (Delta Econ &lt; 0), dot-ball generation,
-          and context runs prevented (RP6). A death bowler like Matheesha Pathirana (+1.44 RP6) or Lockie Ferguson
-          (+1.20 RP6) receives fair credit against death-overs run expectations, preventing structural role bias.
+      <div className="p-4 rounded-2xl bg-[#FFF1F8] dark:bg-[#2C0F3C] border border-[#F1DCE9] dark:border-[#673A70] text-xs text-[#71677B] dark:text-[#C5B4CE] flex items-start gap-3">
+        <Info className="w-4 h-4 text-[#650D73] dark:text-purple-300 mt-0.5 flex-shrink-0" />
+        <div className="leading-relaxed font-medium">
+          <strong className="text-[#23142E] dark:text-white font-bold">How to interpret Bowling Reliability</strong>:
+          Bowler reliability emphasizes run suppression (&Delta;Econ &lt; 0), context-adjusted runs prevented per 6 balls,
+          and wicket impact in high-leverage situations. Regularized using Empirical Bayes ($n_0=100$ balls) to balance
+          efficiency against volume.
         </div>
       </div>
     </div>

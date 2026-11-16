@@ -10,6 +10,7 @@ import {
   Legend,
 } from 'recharts';
 import { RadarMetricsBatter, RadarMetricsBowler } from '../../types';
+import { useTheme } from '../../context/ThemeContext';
 
 interface RadarChartWrapperProps {
   player1Name: string;
@@ -25,13 +26,20 @@ interface RadarChartWrapperProps {
 export const RadarChartWrapper: React.FC<RadarChartWrapperProps> = ({
   player1Name,
   player1Data,
-  player1Color = '#10B981',
+  player1Color = '#E5008A', // Royals Pink
   player2Name,
   player2Data,
-  player2Color = '#38BDF8',
+  player2Color = '#650D73', // Royals Purple
   type,
-  height = 300,
+  height = 320,
 }) => {
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
+
+  const gridStroke = isDark ? '#673A70' : '#E2D9E7';
+  const textFill = isDark ? '#C5B4CE' : '#71677B';
+  const effectiveP2Color = isDark && player2Color === '#650D73' ? '#B855D6' : player2Color;
+
   // Dimension names
   const batterKeys: { key: keyof RadarMetricsBatter; label: string }[] = [
     { key: 'power_hitting', label: 'Power Hitting' },
@@ -65,46 +73,56 @@ export const RadarChartWrapper: React.FC<RadarChartWrapperProps> = ({
   return (
     <div className="w-full" style={{ height: `${height}px` }}>
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart cx="50%" cy="50%" outerRadius="75%" data={chartData}>
-          <PolarGrid stroke="#334155" strokeDasharray="3 3" />
+        <RadarChart cx="50%" cy="50%" outerRadius="72%" data={chartData}>
+          <PolarGrid stroke={gridStroke} strokeDasharray="3 3" />
           <PolarAngleAxis
             dataKey="subject"
-            tick={{ fill: '#94A3B8', fontSize: 11, fontWeight: 500 }}
+            tick={{ fill: textFill, fontSize: 11, fontWeight: 600 }}
           />
           <PolarRadiusAxis
             angle={30}
-            domain={[30, 100]}
-            stroke="#1E293B"
-            tick={{ fill: '#64748B', fontSize: 9 }}
+            domain={[0, 100]}
+            stroke={gridStroke}
+            tick={{ fill: textFill, fontSize: 9 }}
+          />
+          <Tooltip
+            contentStyle={{
+              backgroundColor: isDark ? '#3A174A' : '#FFFFFF',
+              borderColor: isDark ? '#673A70' : '#F1DCE9',
+              borderRadius: '12px',
+              fontSize: '12px',
+              color: isDark ? '#FFFFFF' : '#23142E',
+              boxShadow: '0 4px 20px rgba(101, 13, 115, 0.15)',
+            }}
           />
           <Radar
             name={player1Name}
             dataKey={player1Name}
             stroke={player1Color}
             fill={player1Color}
-            fillOpacity={0.35}
-            strokeWidth={2}
+            fillOpacity={0.4}
+            strokeWidth={2.5}
           />
           {player2Name && (
             <Radar
               name={player2Name}
               dataKey={player2Name}
-              stroke={player2Color}
-              fill={player2Color}
+              stroke={effectiveP2Color}
+              fill={effectiveP2Color}
               fillOpacity={0.35}
-              strokeWidth={2}
+              strokeWidth={2.5}
             />
           )}
-          <Tooltip
-            contentStyle={{
-              backgroundColor: '#0F172A',
-              borderColor: '#334155',
-              borderRadius: '8px',
-              fontSize: '12px',
-              color: '#F8FAFC',
-            }}
-          />
-          {player2Name && <Legend wrapperStyle={{ fontSize: '12px', paddingTop: '8px' }} />}
+          {player2Name && (
+            <Legend
+              wrapperStyle={{
+                paddingTop: '8px',
+                fontSize: '12px',
+                fontWeight: 600,
+                color: textFill,
+              }}
+            />
+          )}
         </RadarChart>
       </ResponsiveContainer>
     </div>

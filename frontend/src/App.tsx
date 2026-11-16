@@ -73,7 +73,7 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#080C14] text-slate-100 font-sans selection:bg-emerald-500/20 selection:text-emerald-400">
+    <div className="min-h-screen flex flex-col bg-[#FFF5FA] dark:bg-[#260C35] text-[#23142E] dark:text-white font-sans transition-colors duration-200 selection:bg-[#E5008A]/20 selection:text-[#E5008A]">
       {/* Top Navigation */}
       <Navbar
         currentPage={currentPage}
