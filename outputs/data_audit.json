@@ -1,0 +1,871 @@
+{
+  "table_summaries": {
+    "competitions": {
+      "row_count": 141,
+      "col_count": 6,
+      "columns": [
+        "comp_id",
+        "comp_name",
+        "match_format",
+        "season",
+        "competition_category",
+        "is_eligible_competition"
+      ],
+      "columns_with_nulls": {}
+    },
+    "teams": {
+      "row_count": 353,
+      "col_count": 3,
+      "columns": [
+        "comp_id",
+        "team_id",
+        "team_name"
+      ],
+      "columns_with_nulls": {}
+    },
+    "matches": {
+      "row_count": 883,
+      "col_count": 22,
+      "columns": [
+        "match_id",
+        "comp_id",
+        "match_number",
+        "match_date",
+        "stage",
+        "venue_id",
+        "venue_country",
+        "home_team_id",
+        "home_team",
+        "away_team_id",
+        "away_team",
+        "home_team_captain_id",
+        "away_team_captain_id",
+        "toss_win_team_id",
+        "toss_opted",
+        "man_of_the_match",
+        "first_inn_revised_overs",
+        "second_inn_revised_overs",
+        "revised_target",
+        "knock_out",
+        "win_team_id",
+        "result"
+      ],
+      "columns_with_nulls": {
+        "home_team_captain_id": 44,
+        "away_team_captain_id": 45,
+        "toss_win_team_id": 15,
+        "toss_opted": 15,
+        "first_inn_revised_overs": 858,
+        "second_inn_revised_overs": 858,
+        "revised_target": 860,
+        "win_team_id": 41
+      }
+    },
+    "ball_by_ball": {
+      "row_count": 200999,
+      "col_count": 33,
+      "columns": [
+        "match_id",
+        "innings",
+        "overid",
+        "over_ball_num",
+        "innings_ball_num",
+        "batting_team_id",
+        "bowling_team_id",
+        "striker_id",
+        "striker_name",
+        "non_striker_id",
+        "non_striker_name",
+        "bowler_id",
+        "bowler_name",
+        "batting_type",
+        "bowling_type",
+        "batting_order",
+        "runs",
+        "is_four",
+        "is_six",
+        "is_wicket",
+        "dismissal_type_id",
+        "dismissal_type",
+        "dismissed_player_id",
+        "extras_type",
+        "extras1_runs",
+        "extras_2_runs",
+        "pace_or_spin",
+        "bowl_speed",
+        "stroke",
+        "delivery_style",
+        "over_or_around",
+        "on_or_off",
+        "delivery_ist_time"
+      ],
+      "columns_with_nulls": {
+        "dismissal_type_id": 190118,
+        "dismissal_type": 190118,
+        "dismissed_player_id": 190107,
+        "extras_type": 189167,
+        "stroke": 6158,
+        "delivery_style": 391,
+        "over_or_around": 407
+      }
+    },
+    "competition_team_player_mapping": {
+      "row_count": 6413,
+      "col_count": 6,
+      "columns": [
+        "comp_id",
+        "comp_name",
+        "team_id",
+        "team_name",
+        "player_id",
+        "player_name"
+      ],
+      "columns_with_nulls": {}
+    },
+    "playing_eleven": {
+      "row_count": 28381,
+      "col_count": 9,
+      "columns": [
+        "match_id",
+        "team_id",
+        "player_id",
+        "batting_order",
+        "is_played",
+        "is_captain",
+        "is_wk",
+        "is_impact",
+        "is_impact_off"
+      ],
+      "columns_with_nulls": {
+        "batting_order": 8678,
+        "is_captain": 8667,
+        "is_wk": 8667
+      }
+    }
+  },
+  "competition_breakdown": {
+    "categories": {
+      "IPL": {
+        "competitions": 5,
+        "total_matches": 371,
+        "matches_with_deliveries": 367,
+        "comp_ids": [
+          1358,
+          1715,
+          2193,
+          2725,
+          3298
+        ]
+      },
+      "T20I": {
+        "competitions": 134,
+        "total_matches": 482,
+        "matches_with_deliveries": 470,
+        "comp_ids": [
+          3395,
+          3405,
+          3465,
+          3568,
+          3482,
+          3464,
+          3765,
+          3739,
+          3787,
+          3713,
+          3690,
+          3473,
+          1611,
+          1331,
+          1551,
+          1531,
+          1523,
+          1452,
+          1517,
+          1458,
+          1537,
+          1494,
+          1345,
+          1533,
+          1335,
+          1603,
+          1474,
+          1534,
+          1439,
+          1601,
+          1435,
+          1499,
+          1512,
+          1595,
+          1543,
+          1584,
+          1646,
+          1599,
+          1608,
+          1698,
+          2047,
+          1719,
+          2058,
+          1709,
+          1792,
+          1742,
+          1769,
+          1718,
+          1799,
+          1999,
+          2000,
+          2046,
+          1998,
+          2048,
+          1700,
+          1885,
+          1997,
+          1913,
+          2188,
+          2722,
+          2059,
+          2716,
+          2512,
+          2267,
+          2229,
+          2753,
+          2561,
+          2692,
+          2542,
+          2305,
+          2398,
+          2605,
+          2060,
+          2453,
+          2395,
+          2387,
+          2457,
+          2548,
+          2354,
+          2350,
+          2371,
+          2062,
+          2269,
+          2372,
+          2455,
+          2061,
+          2452,
+          2442,
+          2718,
+          2562,
+          2755,
+          3074,
+          3197,
+          3241,
+          3282,
+          3190,
+          2801,
+          2626,
+          3162,
+          3163,
+          3254,
+          2874,
+          2793,
+          3020,
+          3133,
+          2912,
+          3251,
+          3223,
+          2975,
+          2873,
+          2513,
+          2940,
+          3226,
+          2921,
+          2973,
+          3159,
+          2628,
+          2875,
+          3174,
+          3288,
+          3228,
+          2915,
+          3358,
+          3450,
+          3331,
+          3317,
+          3329,
+          3126,
+          3313,
+          3128,
+          3446,
+          2906,
+          3334,
+          3433
+        ]
+      },
+      "Other_T20": {
+        "competitions": 2,
+        "total_matches": 30,
+        "matches_with_deliveries": 30,
+        "comp_ids": [
+          2670,
+          3289
+        ]
+      }
+    },
+    "zero_match_competitions": [
+      {
+        "comp_id": 3405,
+        "comp_name": "Afghanistan v Sri Lanka T20I Series 2026",
+        "match_format": "T20I",
+        "season": "2026"
+      },
+      {
+        "comp_id": 3473,
+        "comp_name": "United Arab Emirates in Nepal T20I Series 2026",
+        "match_format": "T20I",
+        "season": "2026"
+      },
+      {
+        "comp_id": 2940,
+        "comp_name": "India in Bangladesh T20I Series 2025",
+        "match_format": "T20I",
+        "season": "2025"
+      }
+    ],
+    "total_competitions": 141
+  },
+  "foreign_keys": {
+    "matches_comp_id_valid": {
+      "status": true,
+      "unmatched_count": 0
+    },
+    "matches_teams_valid": {
+      "status": true,
+      "unmatched_home_count": 0,
+      "unmatched_away_count": 0
+    },
+    "bbb_matches_valid": {
+      "status": true,
+      "unmatched_count": 0
+    },
+    "bbb_teams_valid": {
+      "status": true,
+      "unmatched_count": 0
+    },
+    "bbb_players_in_mapping_valid": {
+      "status": true,
+      "unmatched_count": 0,
+      "total_bbb_players": 959
+    },
+    "playing_eleven_matches_valid": {
+      "status": true,
+      "unmatched_count": 0
+    }
+  },
+  "player_identities": {
+    "names_with_multiple_ids_count": 7,
+    "collisions": {
+      "Abdul Samad": {
+        "player_ids": [
+          7446,
+          6922
+        ],
+        "occurrences": [
+          {
+            "comp_name": "IPL 2022",
+            "team_name": "Sunrisers Hyderabad",
+            "player_id": 7446
+          },
+          {
+            "comp_name": "IPL 2023",
+            "team_name": "Sunrisers Hyderabad",
+            "player_id": 7446
+          },
+          {
+            "comp_name": "IPL 2024",
+            "team_name": "Sunrisers Hyderabad",
+            "player_id": 7446
+          },
+          {
+            "comp_name": "Mens T20 Emerging Teams Asia Cup 2024",
+            "team_name": "Pakistan A",
+            "player_id": 6922
+          },
+          {
+            "comp_name": "IPL 2025",
+            "team_name": "Lucknow Super Giants",
+            "player_id": 7446
+          },
+          {
+            "comp_name": "Pakistan in New Zealand T20I Series 2025",
+            "team_name": "Pakistan",
+            "player_id": 6922
+          },
+          {
+            "comp_name": "South Africa in Pakistan T20I Series 2025",
+            "team_name": "Pakistan",
+            "player_id": 6922
+          },
+          {
+            "comp_name": "Pakistan T20I Tri-Series 2025",
+            "team_name": "Pakistan",
+            "player_id": 6922
+          },
+          {
+            "comp_name": "IPL 2026",
+            "team_name": "Lucknow Super Giants",
+            "player_id": 7446
+          },
+          {
+            "comp_name": "Pakistan in Sri Lanka T20I Series 2026",
+            "team_name": "Pakistan",
+            "player_id": 6922
+          },
+          {
+            "comp_name": "Sri Lanka in Pakistan T20I Series 2026",
+            "team_name": "Pakistan",
+            "player_id": 6922
+          }
+        ]
+      },
+      "Bashir Ahmad": {
+        "player_ids": [
+          39479,
+          29833
+        ],
+        "occurrences": [
+          {
+            "comp_name": "Mens T20 Emerging Teams Asia Cup 2024",
+            "team_name": "Afghanistan A",
+            "player_id": 39479
+          },
+          {
+            "comp_name": "Asia Cup 2025",
+            "team_name": "Afghanistan",
+            "player_id": 29833
+          },
+          {
+            "comp_name": "United Arab Emirates T20I Tri-Series 2025",
+            "team_name": "Afghanistan",
+            "player_id": 29833
+          },
+          {
+            "comp_name": "Afghanistan v Bangladesh T20I Series 2025",
+            "team_name": "Afghanistan",
+            "player_id": 29833
+          },
+          {
+            "comp_name": "Afghanistan in Zimbabwe T20I Series 2025",
+            "team_name": "Afghanistan",
+            "player_id": 29833
+          }
+        ]
+      },
+      "Basil Hameed": {
+        "player_ids": [
+          8638,
+          39444
+        ],
+        "occurrences": [
+          {
+            "comp_name": "Asia Cup T20 Qualifiers 2022",
+            "team_name": "United Arab Emirates",
+            "player_id": 8638
+          },
+          {
+            "comp_name": "Bangladesh in United Arab Emirates T20I Series 2022",
+            "team_name": "United Arab Emirates",
+            "player_id": 8638
+          },
+          {
+            "comp_name": "New Zealand in United Arab Emirates T20I Series 2023",
+            "team_name": "United Arab Emirates",
+            "player_id": 8638
+          },
+          {
+            "comp_name": "Mens T20 Emerging Teams Asia Cup 2024",
+            "team_name": "United Arab Emirates",
+            "player_id": 8638
+          },
+          {
+            "comp_name": "Mens T20 Emerging Teams Asia Cup 2024",
+            "team_name": "United Arab Emirates",
+            "player_id": 39444
+          },
+          {
+            "comp_name": "Ireland in United Arab Emirates T20I Series 2026",
+            "team_name": "United Arab Emirates",
+            "player_id": 8638
+          }
+        ]
+      },
+      "Haider Ali": {
+        "player_ids": [
+          7338,
+          28756
+        ],
+        "occurrences": [
+          {
+            "comp_name": "Mens Twenty20 Asia Cup 2022",
+            "team_name": "Pakistan",
+            "player_id": 7338
+          },
+          {
+            "comp_name": "England in Pakistan T20I Series 2022",
+            "team_name": "Pakistan",
+            "player_id": 7338
+          },
+          {
+            "comp_name": "New Zealand T20I Tri Series 2022/23",
+            "team_name": "Pakistan",
+            "player_id": 7338
+          },
+          {
+            "comp_name": "Mens T20 Emerging Teams Asia Cup 2024",
+            "team_name": "Pakistan A",
+            "player_id": 7338
+          },
+          {
+            "comp_name": "Bangladesh in United Arab Emirates T20I Series 2025",
+            "team_name": "United Arab Emirates",
+            "player_id": 28756
+          },
+          {
+            "comp_name": "Asia Cup 2025",
+            "team_name": "United Arab Emirates",
+            "player_id": 28756
+          },
+          {
+            "comp_name": "United Arab Emirates T20I Tri-Series 2025",
+            "team_name": "United Arab Emirates",
+            "player_id": 28756
+          },
+          {
+            "comp_name": "Ireland in United Arab Emirates T20I Series 2026",
+            "team_name": "United Arab Emirates",
+            "player_id": 28756
+          },
+          {
+            "comp_name": "United Arab Emirates in Nepal T20I Series 2026",
+            "team_name": "United Arab Emirates",
+            "player_id": 28756
+          }
+        ]
+      },
+      "Mohammad Ali": {
+        "player_ids": [
+          3083,
+          20229
+        ],
+        "occurrences": [
+          {
+            "comp_name": "New Zealand in Pakistan T20I Series 2024",
+            "team_name": "Pakistan",
+            "player_id": 3083
+          },
+          {
+            "comp_name": "Pakistan in England T20I Series 2024",
+            "team_name": "Pakistan",
+            "player_id": 20229
+          },
+          {
+            "comp_name": "Pakistan in New Zealand T20I Series 2025",
+            "team_name": "Pakistan",
+            "player_id": 20229
+          }
+        ]
+      },
+      "Muhammad Farooq": {
+        "player_ids": [
+          27373,
+          28978
+        ],
+        "occurrences": [
+          {
+            "comp_name": "Mens T20 Emerging Teams Asia Cup 2024",
+            "team_name": "United Arab Emirates",
+            "player_id": 27373
+          },
+          {
+            "comp_name": "Mens T20 Emerging Teams Asia Cup 2024",
+            "team_name": "United Arab Emirates",
+            "player_id": 28978
+          },
+          {
+            "comp_name": "Asia Cup 2025",
+            "team_name": "United Arab Emirates",
+            "player_id": 27373
+          },
+          {
+            "comp_name": "United Arab Emirates T20I Tri-Series 2025",
+            "team_name": "United Arab Emirates",
+            "player_id": 27373
+          },
+          {
+            "comp_name": "Asia Cup Rising Stars 2025",
+            "team_name": "United Arab Emirates",
+            "player_id": 27373
+          },
+          {
+            "comp_name": "Ireland in United Arab Emirates T20I Series 2026",
+            "team_name": "United Arab Emirates",
+            "player_id": 27373
+          }
+        ]
+      },
+      "Rashid Khan": {
+        "player_ids": [
+          4722,
+          20172
+        ],
+        "occurrences": [
+          {
+            "comp_name": "IPL 2022",
+            "team_name": "Gujarat Titans",
+            "player_id": 4722
+          },
+          {
+            "comp_name": "Afghanistan in Zimbabwe T20I Series 2022",
+            "team_name": "Afghanistan",
+            "player_id": 4722
+          },
+          {
+            "comp_name": "Mens Twenty20 Asia Cup 2022",
+            "team_name": "Afghanistan",
+            "player_id": 4722
+          },
+          {
+            "comp_name": "Afghanistan in Ireland T20I Series 2022",
+            "team_name": "Afghanistan",
+            "player_id": 4722
+          },
+          {
+            "comp_name": "IPL 2023",
+            "team_name": "Gujarat Titans",
+            "player_id": 4722
+          },
+          {
+            "comp_name": "Afghanistan v Pakistan T20I Series 2023",
+            "team_name": "Afghanistan",
+            "player_id": 4722
+          },
+          {
+            "comp_name": "Afghanistan in Bangladesh T20I Series 2023",
+            "team_name": "Afghanistan",
+            "player_id": 4722
+          },
+          {
+            "comp_name": "Afghanistan in India T20I Series 2024",
+            "team_name": "Afghanistan",
+            "player_id": 4722
+          },
+          {
+            "comp_name": "IPL 2024",
+            "team_name": "Gujarat Titans",
+            "player_id": 4722
+          },
+          {
+            "comp_name": "Afghanistan v Ireland T20I Series 2024",
+            "team_name": "Afghanistan",
+            "player_id": 4722
+          },
+          {
+            "comp_name": "IPL 2025",
+            "team_name": "Gujarat Titans",
+            "player_id": 4722
+          },
+          {
+            "comp_name": "Afghanistan in Zimbabwe T20I Series 2024",
+            "team_name": "Afghanistan",
+            "player_id": 4722
+          },
+          {
+            "comp_name": "Asia Cup 2025",
+            "team_name": "Afghanistan",
+            "player_id": 4722
+          },
+          {
+            "comp_name": "United Arab Emirates T20I Tri-Series 2025",
+            "team_name": "Afghanistan",
+            "player_id": 4722
+          },
+          {
+            "comp_name": "Afghanistan v Bangladesh T20I Series 2025",
+            "team_name": "Afghanistan",
+            "player_id": 4722
+          },
+          {
+            "comp_name": "Afghanistan in Zimbabwe T20I Series 2025",
+            "team_name": "Afghanistan",
+            "player_id": 4722
+          },
+          {
+            "comp_name": "IPL 2026",
+            "team_name": "Gujarat Titans",
+            "player_id": 4722
+          },
+          {
+            "comp_name": "Afghanistan v West Indies T20I Series 2026",
+            "team_name": "Afghanistan",
+            "player_id": 4722
+          },
+          {
+            "comp_name": "Afghanistan v Sri Lanka T20I Series 2026",
+            "team_name": "Afghanistan",
+            "player_id": 4722
+          },
+          {
+            "comp_name": "United Arab Emirates in Nepal T20I Series 2026",
+            "team_name": "Nepal",
+            "player_id": 20172
+          },
+          {
+            "comp_name": "Afghanistan vs India in India T20I Series 2026",
+            "team_name": "Afghanistan",
+            "player_id": 4722
+          },
+          {
+            "comp_name": "Afghanistan v Zimbabwe T20I Series 2026",
+            "team_name": "Afghanistan",
+            "player_id": 4722
+          }
+        ]
+      }
+    }
+  },
+  "match_completion": {
+    "total_matches_in_matches_table": 883,
+    "matches_with_deliveries": 867,
+    "matches_without_deliveries_count": 16,
+    "matches_without_deliveries": [
+      {
+        "match_id": 31281,
+        "comp_id": 2193,
+        "match_date": "2024-05-13 00:00:00",
+        "result": "Match Abandoned"
+      },
+      {
+        "match_id": 31284,
+        "comp_id": 2193,
+        "match_date": "2024-05-16 00:00:00",
+        "result": "Match Abandoned"
+      },
+      {
+        "match_id": 31288,
+        "comp_id": 2193,
+        "match_date": "2024-05-19 00:00:00",
+        "result": "Match Abandoned"
+      },
+      {
+        "match_id": 32610,
+        "comp_id": 2354,
+        "match_date": "2024-05-22 00:00:00",
+        "result": "Match Abandoned"
+      },
+      {
+        "match_id": 32612,
+        "comp_id": 2354,
+        "match_date": "2024-05-28 00:00:00",
+        "result": "Match Abandoned"
+      },
+      {
+        "match_id": 32622,
+        "comp_id": 2398,
+        "match_date": "2024-05-20 00:00:00",
+        "result": "Match Abandoned"
+      },
+      {
+        "match_id": 38797,
+        "comp_id": 2442,
+        "match_date": "2024-12-14 00:00:00",
+        "result": "Match Abandoned"
+      },
+      {
+        "match_id": 36564,
+        "comp_id": 2548,
+        "match_date": "2024-09-15 00:00:00",
+        "result": "Match Abandoned"
+      },
+      {
+        "match_id": 36210,
+        "comp_id": 2628,
+        "match_date": "2025-09-14 00:00:00",
+        "result": "Match Abandoned"
+      },
+      {
+        "match_id": 40761,
+        "comp_id": 2725,
+        "match_date": "2025-05-17 00:00:00",
+        "result": "Match Abandoned"
+      },
+      {
+        "match_id": 41502,
+        "comp_id": 2873,
+        "match_date": "2025-06-12 00:00:00",
+        "result": "Match Abandoned"
+      },
+      {
+        "match_id": 41503,
+        "comp_id": 2873,
+        "match_date": "2025-06-14 00:00:00",
+        "result": "Match Abandoned"
+      },
+      {
+        "match_id": 42030,
+        "comp_id": 2921,
+        "match_date": "2025-12-17 00:00:00",
+        "result": "Match Abandoned"
+      },
+      {
+        "match_id": 46008,
+        "comp_id": 3174,
+        "match_date": "2025-09-19 00:00:00",
+        "result": "Match Abandoned"
+      },
+      {
+        "match_id": 48513,
+        "comp_id": 3317,
+        "match_date": "2026-01-10 00:00:00",
+        "result": "Match Abandoned"
+      },
+      {
+        "match_id": 50189,
+        "comp_id": 3433,
+        "match_date": "2026-04-29 00:00:00",
+        "result": "Match Abandoned"
+      }
+    ],
+    "incomplete_matches_with_deliveries_count": 24,
+    "super_over_matches_count": 6,
+    "super_over_match_ids": [
+      34429,
+      40725,
+      45512,
+      48027,
+      48029,
+      50359
+    ],
+    "revised_target_matches_count": 23,
+    "revised_target_match_ids": [
+      13612,
+      16754,
+      17395,
+      17765,
+      21586,
+      21070,
+      21071,
+      28046,
+      29984,
+      37354,
+      36098,
+      34428,
+      36208,
+      40727,
+      40749,
+      39809,
+      41851,
+      50137,
+      50371,
+      48610,
+      48611,
+      50190,
+      54711
+    ]
+  }
+}

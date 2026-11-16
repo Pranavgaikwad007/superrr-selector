@@ -1,0 +1,40 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Data files (do not commit large raw or intermediate datasets to GitHub)
+*.zip
+data/raw/
+data/processed/*.parquet
+
+# Environments and dependencies
+.env
+.venv
+env/
+venv/
+ENV/
+node_modules/
+frontend/node_modules/
+frontend/dist/
+dist/
+
+# Pytest / Testing
+.pytest_cache/
+.coverage
+htmlcov/
+*.tsbuildinfo
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
+# Scratch and temporary scripts
+scratch/
+scratch_*.py

@@ -1,0 +1,388 @@
+{
+  "model_metadata": {
+    "chasing_model": "Chronological Win Probability Logistic Regression",
+    "first_innings_model": "Chronological Ridge Resource Projection",
+    "calibration_method": "Empirical Monotonic Quantile Mapping",
+    "total_deliveries_scored": 200999,
+    "valid_deliveries_scored": 199246
+  },
+  "win_probability_model_performance": {
+    "train_samples": 57443,
+    "test_samples": 37703,
+    "train_roc_auc": 0.893640048906003,
+    "test_roc_auc": 0.905102513283928,
+    "test_log_loss": 0.38805649911488227,
+    "test_brier_score": 0.12691797676155958
+  },
+  "first_innings_model_performance": {
+    "train_samples": 62334,
+    "test_samples": 41672,
+    "train_mae": 17.270100281751397,
+    "test_mae": 18.148331700264848,
+    "test_r2": 0.6132129593117852
+  },
+  "pressure_tier_distribution": {
+    "Ordinary": {
+      "count": 69686,
+      "percentage": 34.97,
+      "range": "[0, 35]"
+    },
+    "Medium": {
+      "count": 59897,
+      "percentage": 30.06,
+      "range": "[35, 65]"
+    },
+    "High": {
+      "count": 39884,
+      "percentage": 20.02,
+      "range": "[65, 85]"
+    },
+    "Extreme": {
+      "count": 29779,
+      "percentage": 14.95,
+      "range": "[85, 100]"
+    }
+  },
+  "sensitivity_analysis": {
+    "tier_threshold_sensitivity": {
+      "baseline [35, 65, 85]": {
+        "Ordinary": {
+          "count": 69486,
+          "percentage": 34.87
+        },
+        "Medium": {
+          "count": 59898,
+          "percentage": 30.06
+        },
+        "High": {
+          "count": 39878,
+          "percentage": 20.01
+        },
+        "Extreme": {
+          "count": 29984,
+          "percentage": 15.05
+        }
+      },
+      "conservative [30, 60, 80]": {
+        "Ordinary": {
+          "count": 59511,
+          "percentage": 29.87
+        },
+        "Medium": {
+          "count": 59905,
+          "percentage": 30.07
+        },
+        "High": {
+          "count": 39876,
+          "percentage": 20.01
+        },
+        "Extreme": {
+          "count": 39954,
+          "percentage": 20.05
+        }
+      },
+      "strict [40, 70, 90]": {
+        "Ordinary": {
+          "count": 79462,
+          "percentage": 39.88
+        },
+        "Medium": {
+          "count": 59888,
+          "percentage": 30.06
+        },
+        "High": {
+          "count": 39862,
+          "percentage": 20.01
+        },
+        "Extreme": {
+          "count": 20034,
+          "percentage": 10.05
+        }
+      }
+    },
+    "knockout_stakes_sensitivity": {
+      "knockout_deliveries_count": 7335,
+      "knockout_mean_pressure": 55.94,
+      "regular_mean_pressure": 49.82,
+      "delta_mean": 6.12
+    },
+    "innings_calibration_alignment": {
+      "innings_1": {
+        "mean": 50.03,
+        "std": 28.81,
+        "median": 50.0,
+        "iqr": 49.8
+      },
+      "innings_2": {
+        "mean": 50.05,
+        "std": 28.87,
+        "median": 50.1,
+        "iqr": 50.1
+      },
+      "mean_divergence": 0.02,
+      "median_divergence": 0.1
+    }
+  },
+  "match_case_studies": {
+    "ipl_2023_final_csk_gt": {
+      "match_id": 21586,
+      "description": "IPL 2023 Final: Rain-shortened chase to 171. Last over bowled by Mohit Sharma.",
+      "deliveries": [
+        {
+          "overid": 15,
+          "over_ball_num": 1,
+          "striker_name": "Shivam Dube",
+          "bowler_name": "Mohit Sharma",
+          "runs_required": 13.0,
+          "balls_remaining": 6,
+          "win_probability": 0.6841,
+          "pressure_score": 99.6,
+          "pressure_tier": "Extreme"
+        },
+        {
+          "overid": 15,
+          "over_ball_num": 2,
+          "striker_name": "Shivam Dube",
+          "bowler_name": "Mohit Sharma",
+          "runs_required": 13.0,
+          "balls_remaining": 5,
+          "win_probability": 0.5097,
+          "pressure_score": 100.0,
+          "pressure_tier": "Extreme"
+        },
+        {
+          "overid": 15,
+          "over_ball_num": 3,
+          "striker_name": "Ravindra Jadeja",
+          "bowler_name": "Mohit Sharma",
+          "runs_required": 12.0,
+          "balls_remaining": 4,
+          "win_probability": 0.3584,
+          "pressure_score": 100.0,
+          "pressure_tier": "Extreme"
+        },
+        {
+          "overid": 15,
+          "over_ball_num": 4,
+          "striker_name": "Shivam Dube",
+          "bowler_name": "Mohit Sharma",
+          "runs_required": 11.0,
+          "balls_remaining": 3,
+          "win_probability": 0.162,
+          "pressure_score": 99.7,
+          "pressure_tier": "Extreme"
+        },
+        {
+          "overid": 15,
+          "over_ball_num": 5,
+          "striker_name": "Ravindra Jadeja",
+          "bowler_name": "Mohit Sharma",
+          "runs_required": 10.0,
+          "balls_remaining": 2,
+          "win_probability": 0.0218,
+          "pressure_score": 97.9,
+          "pressure_tier": "Extreme"
+        },
+        {
+          "overid": 15,
+          "over_ball_num": 6,
+          "striker_name": "Ravindra Jadeja",
+          "bowler_name": "Mohit Sharma",
+          "runs_required": 4.0,
+          "balls_remaining": 1,
+          "win_probability": 0.1385,
+          "pressure_score": 99.3,
+          "pressure_tier": "Extreme"
+        }
+      ]
+    },
+    "comfortable_chase_wi_vs_eng": {
+      "match_id": 13511,
+      "description": "Comfortable 104 run chase: Low pressure, outcome virtually decided early.",
+      "deliveries": [
+        {
+          "overid": 17,
+          "over_ball_num": 2,
+          "striker_name": "Nicholas Pooran",
+          "bowler_name": "Saqib Mahmood",
+          "runs_required": 9.0,
+          "balls_remaining": 23,
+          "win_probability": 0.9904,
+          "pressure_score": 30.6,
+          "pressure_tier": "Ordinary"
+        },
+        {
+          "overid": 17,
+          "over_ball_num": 3,
+          "striker_name": "Brandon King",
+          "bowler_name": "Saqib Mahmood",
+          "runs_required": 8.0,
+          "balls_remaining": 22,
+          "win_probability": 0.991,
+          "pressure_score": 30.7,
+          "pressure_tier": "Ordinary"
+        },
+        {
+          "overid": 17,
+          "over_ball_num": 4,
+          "striker_name": "Brandon King",
+          "bowler_name": "Saqib Mahmood",
+          "runs_required": 4.0,
+          "balls_remaining": 21,
+          "win_probability": 0.994,
+          "pressure_score": 30.9,
+          "pressure_tier": "Ordinary"
+        },
+        {
+          "overid": 17,
+          "over_ball_num": 5,
+          "striker_name": "Nicholas Pooran",
+          "bowler_name": "Saqib Mahmood",
+          "runs_required": 3.0,
+          "balls_remaining": 20,
+          "win_probability": 0.9945,
+          "pressure_score": 31.0,
+          "pressure_tier": "Ordinary"
+        },
+        {
+          "overid": 17,
+          "over_ball_num": 6,
+          "striker_name": "Brandon King",
+          "bowler_name": "Saqib Mahmood",
+          "runs_required": 2.0,
+          "balls_remaining": 19,
+          "win_probability": 0.995,
+          "pressure_score": 31.2,
+          "pressure_tier": "Ordinary"
+        },
+        {
+          "overid": 18,
+          "over_ball_num": 1,
+          "striker_name": "Brandon King",
+          "bowler_name": "Tymal Mills",
+          "runs_required": 1.0,
+          "balls_remaining": 18,
+          "win_probability": 0.9954,
+          "pressure_score": 31.3,
+          "pressure_tier": "Ordinary"
+        }
+      ]
+    },
+    "super_over_dc_vs_rr": {
+      "match_id": 40725,
+      "description": "Tied match going into Super Over shootouts (Innings 3 & 4).",
+      "deliveries": [
+        {
+          "innings": 4,
+          "overid": 1,
+          "over_ball_num": 1,
+          "striker_name": "Lokesh Rahul",
+          "bowler_name": "Sandeep Sharma",
+          "runs_required": 12.0,
+          "balls_remaining": 6,
+          "pressure_score": 94.0,
+          "pressure_tier": "Extreme"
+        },
+        {
+          "innings": 3,
+          "overid": 1,
+          "over_ball_num": 1,
+          "striker_name": "Shimron Hetmyer",
+          "bowler_name": "Mitchell Starc",
+          "runs_required": NaN,
+          "balls_remaining": 6,
+          "pressure_score": 85.0,
+          "pressure_tier": "High"
+        },
+        {
+          "innings": 3,
+          "overid": 1,
+          "over_ball_num": 2,
+          "striker_name": "Shimron Hetmyer",
+          "bowler_name": "Mitchell Starc",
+          "runs_required": NaN,
+          "balls_remaining": 5,
+          "pressure_score": 86.0,
+          "pressure_tier": "Extreme"
+        },
+        {
+          "innings": 4,
+          "overid": 1,
+          "over_ball_num": 2,
+          "striker_name": "Lokesh Rahul",
+          "bowler_name": "Sandeep Sharma",
+          "runs_required": 10.0,
+          "balls_remaining": 5,
+          "pressure_score": 94.0,
+          "pressure_tier": "Extreme"
+        },
+        {
+          "innings": 4,
+          "overid": 1,
+          "over_ball_num": 3,
+          "striker_name": "Lokesh Rahul",
+          "bowler_name": "Sandeep Sharma",
+          "runs_required": 6.0,
+          "balls_remaining": 4,
+          "pressure_score": 92.5,
+          "pressure_tier": "Extreme"
+        },
+        {
+          "innings": 3,
+          "overid": 1,
+          "over_ball_num": 3,
+          "striker_name": "Shimron Hetmyer",
+          "bowler_name": "Mitchell Starc",
+          "runs_required": NaN,
+          "balls_remaining": 4,
+          "pressure_score": 87.0,
+          "pressure_tier": "Extreme"
+        },
+        {
+          "innings": 3,
+          "overid": 1,
+          "over_ball_num": 4,
+          "striker_name": "Riyan Parag",
+          "bowler_name": "Mitchell Starc",
+          "runs_required": NaN,
+          "balls_remaining": 3,
+          "pressure_score": 88.0,
+          "pressure_tier": "Extreme"
+        },
+        {
+          "innings": 4,
+          "overid": 1,
+          "over_ball_num": 4,
+          "striker_name": "Tristan Stubbs",
+          "bowler_name": "Sandeep Sharma",
+          "runs_required": 5.0,
+          "balls_remaining": 3,
+          "pressure_score": 93.0,
+          "pressure_tier": "Extreme"
+        },
+        {
+          "innings": 3,
+          "overid": 1,
+          "over_ball_num": 5,
+          "striker_name": "Riyan Parag",
+          "bowler_name": "Mitchell Starc",
+          "runs_required": NaN,
+          "balls_remaining": 3,
+          "pressure_score": 88.0,
+          "pressure_tier": "Extreme"
+        },
+        {
+          "innings": 3,
+          "overid": 1,
+          "over_ball_num": 6,
+          "striker_name": "Shimron Hetmyer",
+          "bowler_name": "Mitchell Starc",
+          "runs_required": NaN,
+          "balls_remaining": 2,
+          "pressure_score": 91.5,
+          "pressure_tier": "Extreme"
+        }
+      ]
+    }
+  }
+}

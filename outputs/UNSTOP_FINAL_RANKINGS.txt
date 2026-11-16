@@ -1,0 +1,255 @@
+================================================================================
+   SUPERR SELECTOR SEASON 2 — UNSTOP OFFICIAL FINAL PLAYER RANKINGS SUBMISSION
+   Rajasthan Royals — Cricket Pressure Intelligence System
+================================================================================
+
+SUBMISSION INSTRUCTIONS FOR UNSTOP PORTAL:
+- Navigate to the Unstop Round 1 Submission Page for "SupeRR Selector Season 2".
+- For Rank 1 through Rank 10, select the exact player name from the dropdown.
+- Ensure that the dropdown selections match the exact ranks below.
+- Upload "reports/final_methodology_report.pdf" as your Methodology Report.
+
+--------------------------------------------------------------------------------
+PART 1: TOP 10 BATTERS UNDER PRESSURE (DROPDOWN QUICK-COPY)
+--------------------------------------------------------------------------------
+Rank 1:  Yashasvi Jaiswal
+Rank 2:  Prabhsimran Singh
+Rank 3:  Abhishek Sharma
+Rank 4:  Naman Dhir
+Rank 5:  Quinton de Kock
+Rank 6:  Suryakumar Yadav
+Rank 7:  Reeza Hendricks
+Rank 8:  Heinrich Klaasen
+Rank 9:  Ajinkya Rahane
+Rank 10: Mohammad Rizwan
+
+--------------------------------------------------------------------------------
+PART 1 (DETAILED): TOP 10 BATTERS UNDER PRESSURE WITH STATISTICAL EVIDENCE
+--------------------------------------------------------------------------------
+Rank 1: Yashasvi Jaiswal
+   - Player ID: 6819
+   - Teams: Rajasthan Royals / India
+   - Reliability Score: 84.17 / 100 (95% CI: [71.66, 96.68])
+   - Pressure Strike Rate: 179.71 (Overall: 156.36, ΔSR: +23.35)
+   - Runs Added / 100 Balls: +39.41
+   - High-Pressure Balls Faced: 276 balls across 21 matches
+   - Boundary % under Pressure: 28.62% | Dot %: 26.09%
+   - Consistency Rate: 66.67% positive impact matches
+
+Rank 2: Prabhsimran Singh
+   - Player ID: 7216
+   - Teams: Punjab Kings
+   - Reliability Score: 81.40 / 100 (95% CI: [68.28, 94.52])
+   - Pressure Strike Rate: 178.09 (Overall: 160.05, ΔSR: +18.03)
+   - Runs Added / 100 Balls: +38.34
+   - High-Pressure Balls Faced: 251 balls across 18 matches
+   - Boundary % under Pressure: 27.09% | Dot %: 27.49%
+   - Consistency Rate: 72.22% positive impact matches
+
+Rank 3: Abhishek Sharma
+   - Player ID: 6281
+   - Teams: Sunrisers Hyderabad / India
+   - Reliability Score: 76.44 / 100 (95% CI: [63.65, 89.23])
+   - Pressure Strike Rate: 185.23 (Overall: 186.49, ΔSR: -1.27)
+   - Runs Added / 100 Balls: +49.74
+   - High-Pressure Balls Faced: 264 balls across 28 matches
+   - Boundary % under Pressure: 28.41% | Dot %: 28.41%
+   - Consistency Rate: 67.86% positive impact matches
+
+Rank 4: Naman Dhir
+   - Player ID: 37052
+   - Teams: Mumbai Indians / India
+   - Reliability Score: 76.11 / 100 (95% CI: [62.00, 90.22])
+   - Pressure Strike Rate: 182.95 (Overall: 172.04, ΔSR: +10.91)
+   - Runs Added / 100 Balls: +37.01
+   - High-Pressure Balls Faced: 217 balls across 23 matches
+   - Boundary % under Pressure: 26.27% | Dot %: 24.88%
+   - Consistency Rate: 65.22% positive impact matches
+
+Rank 5: Quinton de Kock
+   - Player ID: 2101
+   - Teams: Lucknow Super Giants / South Africa
+   - Reliability Score: 73.97 / 100 (95% CI: [60.49, 87.45])
+   - Pressure Strike Rate: 166.81 (Overall: 150.87, ΔSR: +15.94)
+   - Runs Added / 100 Balls: +33.40
+   - High-Pressure Balls Faced: 238 balls across 21 matches
+   - Boundary % under Pressure: 23.95% | Dot %: 28.15%
+   - Consistency Rate: 66.67% positive impact matches
+
+Rank 6: Suryakumar Yadav
+   - Player ID: 1699
+   - Teams: India / Mumbai Indians
+   - Reliability Score: 72.79 / 100 (95% CI: [65.33, 80.25])
+   - Pressure Strike Rate: 165.77 (Overall: 166.43, ΔSR: -0.66)
+   - Runs Added / 100 Balls: +30.46
+   - High-Pressure Balls Faced: 777 balls across 54 matches
+   - Boundary % under Pressure: 23.42% | Dot %: 27.93%
+   - Consistency Rate: 62.96% positive impact matches
+
+Rank 7: Reeza Hendricks
+   - Player ID: 768
+   - Teams: South Africa
+   - Reliability Score: 71.69 / 100 (95% CI: [57.34, 86.04])
+   - Pressure Strike Rate: 156.67 (Overall: 146.59, ΔSR: +10.08)
+   - Runs Added / 100 Balls: +30.57
+   - High-Pressure Balls Faced: 210 balls across 12 matches
+   - Boundary % under Pressure: 20.00% | Dot %: 26.67%
+   - Consistency Rate: 66.67% positive impact matches
+
+Rank 8: Heinrich Klaasen
+   - Player ID: 4260
+   - Teams: Sunrisers Hyderabad / South Africa
+   - Reliability Score: 70.51 / 100 (95% CI: [61.66, 79.36])
+   - Pressure Strike Rate: 167.03 (Overall: 166.76, ΔSR: +0.27)
+   - Runs Added / 100 Balls: +29.48
+   - High-Pressure Balls Faced: 552 balls across 40 matches
+   - Boundary % under Pressure: 22.46% | Dot %: 25.91%
+   - Consistency Rate: 62.50% positive impact matches
+
+Rank 9: Ajinkya Rahane
+   - Player ID: 167
+   - Teams: Kolkata Knight Riders / Chennai Super Kings
+   - Reliability Score: 69.06 / 100 (95% CI: [53.43, 84.69])
+   - Pressure Strike Rate: 163.28 (Overall: 139.12, ΔSR: +24.15)
+   - Runs Added / 100 Balls: +27.82
+   - High-Pressure Balls Faced: 177 balls across 18 matches
+   - Boundary % under Pressure: 18.64% | Dot %: 25.42%
+   - Consistency Rate: 66.67% positive impact matches
+
+Rank 10: Mohammad Rizwan
+   - Player ID: 3024
+   - Teams: Pakistan
+   - Reliability Score: 68.84 / 100 (95% CI: [56.92, 80.76])
+   - Pressure Strike Rate: 147.70 (Overall: 127.34, ΔSR: +20.35)
+   - Runs Added / 100 Balls: +19.85
+   - High-Pressure Balls Faced: 304 balls across 17 matches
+   - Boundary % under Pressure: 15.46% | Dot %: 23.03%
+   - Consistency Rate: 64.71% positive impact matches
+
+--------------------------------------------------------------------------------
+PART 2: TOP 10 BOWLERS UNDER PRESSURE (DROPDOWN QUICK-COPY)
+--------------------------------------------------------------------------------
+Rank 1:  Jamie Overton
+Rank 2:  Sunil Narine
+Rank 3:  Abrar Ahmed
+Rank 4:  Sufiyan Muqeem
+Rank 5:  Mujeeb Ur Rahman
+Rank 6:  Kuldeep Yadav
+Rank 7:  Matheesha Pathirana
+Rank 8:  Lockie Ferguson
+Rank 9:  Krunal Pandya
+Rank 10: Mitchell Santner
+
+--------------------------------------------------------------------------------
+PART 2 (DETAILED): TOP 10 BOWLERS UNDER PRESSURE WITH STATISTICAL EVIDENCE
+--------------------------------------------------------------------------------
+Rank 1: Jamie Overton
+   - Player ID: 2382
+   - Teams: England / Chennai Super Kings
+   - Reliability Score: 85.13 / 100 (95% CI: [70.85, 99.41])
+   - Pressure Economy Rate: 6.25 (Overall: 8.22, ΔEcon: -1.97)
+   - Runs Prevented / 6 Balls: +2.01 runs
+   - High-Pressure Overs Bowled: 35.3 overs (212 balls) across 18 matches
+   - Pressure Wickets: 20 (Wicket Strike Rate: 10.60 balls/wk)
+   - Dot % under Pressure: 49.53% | Boundary %: 12.26%
+   - Consistency Rate: 77.78% positive impact matches
+
+Rank 2: Sunil Narine
+   - Player ID: 781
+   - Teams: Kolkata Knight Riders
+   - Reliability Score: 83.93 / 100 (95% CI: [75.98, 91.88])
+   - Pressure Economy Rate: 5.87 (Overall: 6.76, ΔEcon: -0.89)
+   - Runs Prevented / 6 Balls: +2.40 runs
+   - High-Pressure Overs Bowled: 114.0 overs (684 balls) across 45 matches
+   - Pressure Wickets: 38 (Wicket Strike Rate: 18.00 balls/wk)
+   - Dot % under Pressure: 40.94% | Boundary %: 8.19%
+   - Consistency Rate: 71.11% positive impact matches
+
+Rank 3: Abrar Ahmed
+   - Player ID: 5979
+   - Teams: Pakistan
+   - Reliability Score: 81.74 / 100 (95% CI: [70.08, 93.40])
+   - Pressure Economy Rate: 5.51 (Overall: 6.57, ΔEcon: -1.06)
+   - Runs Prevented / 6 Balls: +2.04 runs
+   - High-Pressure Overs Bowled: 53.0 overs (318 balls) across 23 matches
+   - Pressure Wickets: 19 (Wicket Strike Rate: 16.74 balls/wk)
+   - Dot % under Pressure: 44.03% | Boundary %: 7.86%
+   - Consistency Rate: 73.91% positive impact matches
+
+Rank 4: Sufiyan Muqeem
+   - Player ID: 34485
+   - Teams: Pakistan
+   - Reliability Score: 76.68 / 100 (95% CI: [59.65, 93.71])
+   - Pressure Economy Rate: 5.60 (Overall: 6.37, ΔEcon: -0.77)
+   - Runs Prevented / 6 Balls: +2.05 runs
+   - High-Pressure Overs Bowled: 24.8 overs (149 balls) across 12 matches
+   - Pressure Wickets: 13 (Wicket Strike Rate: 11.46 balls/wk)
+   - Dot % under Pressure: 53.69% | Boundary %: 10.07%
+   - Consistency Rate: 66.67% positive impact matches
+
+Rank 5: Mujeeb Ur Rahman
+   - Player ID: 6450
+   - Teams: Afghanistan / Mumbai Indians
+   - Reliability Score: 74.94 / 100 (95% CI: [61.11, 88.77])
+   - Pressure Economy Rate: 6.08 (Overall: 6.78, ΔEcon: -0.70)
+   - Runs Prevented / 6 Balls: +1.61 runs
+   - High-Pressure Overs Bowled: 37.7 overs (226 balls) across 24 matches
+   - Pressure Wickets: 18 (Wicket Strike Rate: 12.56 balls/wk)
+   - Dot % under Pressure: 44.25% | Boundary %: 10.18%
+   - Consistency Rate: 70.83% positive impact matches
+
+Rank 6: Kuldeep Yadav
+   - Player ID: 3644
+   - Teams: Delhi Capitals / India
+   - Reliability Score: 73.08 / 100 (95% CI: [66.23, 79.93])
+   - Pressure Economy Rate: 6.94 (Overall: 7.84, ΔEcon: -0.90)
+   - Runs Prevented / 6 Balls: +1.13 runs
+   - High-Pressure Overs Bowled: 153.5 overs (921 balls) across 61 matches
+   - Pressure Wickets: 63 (Wicket Strike Rate: 14.62 balls/wk)
+   - Dot % under Pressure: 36.16% | Boundary %: 11.29%
+   - Consistency Rate: 68.85% positive impact matches
+
+Rank 7: Matheesha Pathirana
+   - Player ID: 8661
+   - Teams: Chennai Super Kings / Sri Lanka
+   - Reliability Score: 72.69 / 100 (95% CI: [63.77, 81.61])
+   - Pressure Economy Rate: 7.24 (Overall: 7.78, ΔEcon: -0.54)
+   - Runs Prevented / 6 Balls: +1.44 runs
+   - High-Pressure Overs Bowled: 90.5 overs (543 balls) across 40 matches
+   - Pressure Wickets: 40 (Wicket Strike Rate: 13.58 balls/wk)
+   - Dot % under Pressure: 37.57% | Boundary %: 13.08%
+   - Consistency Rate: 75.00% positive impact matches
+
+Rank 8: Lockie Ferguson
+   - Player ID: 4692
+   - Teams: New Zealand / Gujarat Titans
+   - Reliability Score: 72.45 / 100 (95% CI: [61.73, 83.17])
+   - Pressure Economy Rate: 7.47 (Overall: 8.37, ΔEcon: -0.90)
+   - Runs Prevented / 6 Balls: +1.20 runs
+   - High-Pressure Overs Bowled: 62.7 overs (376 balls) across 37 matches
+   - Pressure Wickets: 29 (Wicket Strike Rate: 12.97 balls/wk)
+   - Dot % under Pressure: 44.68% | Boundary %: 15.96%
+   - Consistency Rate: 70.27% positive impact matches
+
+Rank 9: Krunal Pandya
+   - Player ID: 4219
+   - Teams: Lucknow Super Giants / Royal Challengers Bengaluru
+   - Reliability Score: 72.36 / 100 (95% CI: [63.37, 81.35])
+   - Pressure Economy Rate: 6.63 (Overall: 7.63, ΔEcon: -1.00)
+   - Runs Prevented / 6 Balls: +1.42 runs
+   - High-Pressure Overs Bowled: 89.2 overs (535 balls) across 40 matches
+   - Pressure Wickets: 32 (Wicket Strike Rate: 16.72 balls/wk)
+   - Dot % under Pressure: 32.71% | Boundary %: 9.35%
+   - Consistency Rate: 67.50% positive impact matches
+
+Rank 10: Mitchell Santner
+   - Player ID: 4101
+   - Teams: New Zealand / Mumbai Indians
+   - Reliability Score: 69.99 / 100 (95% CI: [60.90, 79.08])
+   - Pressure Economy Rate: 6.68 (Overall: 7.20, ΔEcon: -0.52)
+   - Runs Prevented / 6 Balls: +1.13 runs
+   - High-Pressure Overs Bowled: 87.2 overs (523 balls) across 47 matches
+   - Pressure Wickets: 32 (Wicket Strike Rate: 16.34 balls/wk)
+   - Dot % under Pressure: 38.05% | Boundary %: 10.90%
+   - Consistency Rate: 68.09% positive impact matches
+================================================================================
