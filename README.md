@@ -7,8 +7,15 @@
 [![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.4-38bdf8.svg)](https://tailwindcss.com/)
 [![Tests Passing](https://img.shields.io/badge/Pytest-39%20passed-success.svg)](https://docs.pytest.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Vercel Deployed](https://img.shields.io/badge/Vercel-Live-success.svg)](https://superrr-selector.vercel.app)
 
 An end-to-end cricket analytics and machine learning platform built for the **Rajasthan Royals — SupeRR Selector Season 2** competition. The system rigorously quantifies match leverage and identifies the most reliable batters and bowlers under intense match pressure using historical ball-by-ball records from IPL and T20 Internationals (2022 onwards).
+
+### 🌐 Live Production Dashboards
+- **Primary Vercel Production**: [https://superrr-selector.vercel.app](https://superrr-selector.vercel.app)
+- **Alternate Alias**: [https://superrr-selectorr.vercel.app](https://superrr-selectorr.vercel.app)
+- **Deployment URL**: [https://frontend-seven-eta-86.vercel.app](https://frontend-seven-eta-86.vercel.app)
+- **GitHub Repository**: [https://github.com/Pranavgaikwad007/superrr-selector](https://github.com/Pranavgaikwad007/superrr-selector)
 
 ---
 
