@@ -13,24 +13,37 @@ import {
   Info,
   Crown,
   TrendingUp,
+  Download,
 } from 'lucide-react';
 
 export const MethodologyPage: React.FC = () => {
   return (
     <div className="space-y-10 max-w-5xl mx-auto">
       {/* Header */}
-      <div>
-        <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#E5008A] dark:text-[#FF4FAF] mb-1">
-          <BookOpen className="w-4 h-4 text-[#E5008A] dark:text-[#FF4FAF]" />
-          <span>Technical Whitepaper &amp; Modeling Architecture</span>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#E5008A] dark:text-[#FF4FAF] mb-1">
+              <BookOpen className="w-4 h-4 text-[#E5008A] dark:text-[#FF4FAF]" />
+              <span>Technical Whitepaper &amp; Modeling Architecture</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-black text-[#23142E] dark:text-white tracking-tight">
+              SupeRR Selector Methodology &amp; Analytical Formulation
+            </h2>
+            <p className="text-xs sm:text-sm text-[#71677B] dark:text-[#C5B4CE] mt-1 font-medium">
+              Comprehensive documentation of mathematical models, baseline comparisons, Bayesian shrinkage, and zero-leakage guarantees
+            </p>
+          </div>
+          <a
+            href="/reports/final_methodology_report.pdf"
+            download="SupeRR_Selector_Methodology_and_RR_IPL2027_Strategy.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#E5008A] to-[#C20074] text-white font-bold text-xs shadow-md hover:shadow-lg hover:scale-[1.02] transition-all flex-shrink-0"
+          >
+            <Download className="w-4 h-4" />
+            <span>Download Official PDF Report (7 Pages)</span>
+          </a>
         </div>
-        <h2 className="text-2xl sm:text-3xl font-black text-[#23142E] dark:text-white tracking-tight">
-          SupeRR Selector Methodology &amp; Analytical Formulation
-        </h2>
-        <p className="text-xs sm:text-sm text-[#71677B] dark:text-[#C5B4CE] mt-1 font-medium">
-          Comprehensive documentation of mathematical models, baseline comparisons, Bayesian shrinkage, and zero-leakage guarantees
-        </p>
-      </div>
 
       {/* Model Estimates vs Observed Statistics Callout */}
       <div className="p-5 rounded-3xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 flex items-start gap-4">
